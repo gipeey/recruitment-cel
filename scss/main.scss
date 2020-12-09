@@ -1,0 +1,229 @@
+// Variables
+$primaryColor: #0D8758;
+$secondaryColor: #72DAA5;
+$tertiaryColor: #8EF7C1;
+$textColor: #404040;
+
+//mixin
+@mixin buttonPrimary {
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color:lighten($color: $primaryColor, $amount: 10%);
+    color: white;
+    border: none;
+    padding: 6px 20px;
+
+    &:hover {
+        background-color: $primaryColor;
+    }
+}
+
+@mixin buttonSecondary {
+    font-size: 24px;
+    font-weight: bold;
+    border: $primaryColor solid 2px;
+    border-radius: 10px;
+    background-color:white;
+    color: $primaryColor;
+    padding: 4px 18px;
+
+    &:hover {
+        background-color: $primaryColor;
+        color: white;
+    }
+}
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+// // Style heading
+// body {
+//         div.title {
+//             font-family: 'Raleway', sans-serif;
+//             text-transform: uppercase;
+//             background-image: url(../img/bg.png);
+//             background-size: 660px auto;
+//             background-repeat: no-repeat;
+//             width: 100%;
+//             height: 630px;
+//             background-position-x: right;
+//             background-position-y: 52px;
+//             padding-top: 165px;
+            
+
+//             h2 {
+//                 font-size: 30px;
+//                 color: lighten($color: $primaryColor, $amount: 10%);
+//                 font-weight: 500;
+//             }
+
+//             h1 {
+//                 font-size: 60px;
+//                 font-weight: bold;
+//                 color: $primaryColor;
+//             }
+
+//             div.row {
+//                 align-items: center;
+//                 div.col {
+//                     max-width: fit-content;
+
+//                 a.btn-primary {
+//                     @include buttonPrimary();
+                   
+//                 }
+
+//                 }
+
+//                 div.col {
+                    
+//                 a.btn-secondary {
+//                     @include buttonSecondary();
+                    
+//                 }
+
+//                 }
+//             }
+
+//         @media screen and (max-width: 992px) {
+//             background-image: url(../img/bg-opacity.png);
+
+        
+//         }
+
+//         @media screen and (max-width: 576px) {
+//             background-image: none;
+//             height: fit-content;
+//             margin-bottom: 30px;
+//             display: inline-block;
+//             text-align: center;
+//             margin-top: -85px;
+            
+//             h1, h2 {
+//                 color: white;
+//                 text-align: center;
+//                 line-height: 1em;
+//             }
+
+//             h2 {
+//                 font-size: 24px;
+//             }
+
+//             h1 {
+//                 font-size: 40px;
+//             }
+//             a.btn-primary {
+//                 font-size: 18px;
+//                 background-color: white;
+//                 color: $primaryColor;
+//             }
+//         }
+
+//         }
+
+//     @media screen and (max-width: 576px) {
+//         background-color: $primaryColor;
+//     }
+//     }
+
+
+// // style forms
+// div.form-section {
+//     background: #FFFFFF 0% 0% no-repeat padding-box;
+//     box-shadow: 0px 3px 33px #00000029;
+//     border-radius: 35px;
+//     opacity: 1;
+//     margin-top: -185px;
+//     margin-bottom: 120px;
+//     padding: 80px 50px;
+//     font-family: 'Open Sans', sans-serif;
+    
+
+//     div.formTitle {
+//         h1 {
+//             text-align: center;
+//             margin-bottom: 50px;
+//             font-family: 'Raleway', sans-serif;
+//             font-weight: 700;
+//             font-size: 30px;
+//             color: $textColor;
+//         }
+//     }
+
+//     form {
+//         font-weight: 600;
+
+//         label.gender {
+//             font-weight: normal;
+//         }
+
+//         button.btnSubmit {
+//             @include buttonPrimary();
+//             font-family: 'Open Sans', sans-serif;
+//             font-weight: normal;
+//             font-size: 16px;
+//         }
+//     }
+
+//     @media screen and (max-width: 576px) {
+//         margin-top: 20px;
+//         width: 93%;
+//         padding: 50px 20px;
+//     }
+// }
+
+// header section
+
+body {
+
+    div.header {
+        background-image: url(../img/bg@2x.png);
+        background-size: 430px;
+        background-position-x: right;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        height: 600px;
+        font-family: 'Raleway', sans-serif;
+        width: auto;
+        display: flex;
+        align-items: center;
+        
+
+        div.title {
+            padding: 30px 40px;
+            background-color: rgba($color: $secondaryColor, $alpha: 0.1);
+            border-radius: 40px;
+
+            h2 {
+                font-size: 50px;
+                line-height: 0.8em;
+            }
+            h1 {
+                font-weight: bold;
+                font-size: 80px;
+            }
+
+            div.navBtn {
+                display: flex;
+                margin-top: 20px;
+
+                .browseJob {
+                    margin-right: 20px;
+
+                    a {
+                        @include buttonPrimary()
+                    }
+                }
+                .backHome {
+                    margin-left: 20px;
+                    
+                    a {
+                        @include buttonSecondary()
+                    }
+                }
+            }
+        }
+    }
+}

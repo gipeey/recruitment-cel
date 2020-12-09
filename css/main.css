@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+body div.header {
+  background-image: url(../img/bg@2x.png);
+  background-size: 430px;
+  background-position-x: right;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  font-family: 'Raleway', sans-serif;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body div.header div.title {
+  padding: 30px 40px;
+  background-color: rgba(114, 218, 165, 0.1);
+  border-radius: 40px;
+}
+
+body div.header div.title h2 {
+  font-size: 50px;
+  line-height: 0.8em;
+}
+
+body div.header div.title h1 {
+  font-weight: bold;
+  font-size: 80px;
+}
+
+body div.header div.title div.navBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+body div.header div.title div.navBtn .browseJob {
+  margin-right: 20px;
+}
+
+body div.header div.title div.navBtn .browseJob a {
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #11b676;
+  color: white;
+  border: none;
+  padding: 6px 20px;
+}
+
+body div.header div.title div.navBtn .browseJob a:hover {
+  background-color: #0D8758;
+}
+
+body div.header div.title div.navBtn .backHome {
+  margin-left: 20px;
+}
+
+body div.header div.title div.navBtn .backHome a {
+  font-size: 24px;
+  font-weight: bold;
+  border: #0D8758 solid 2px;
+  border-radius: 10px;
+  background-color: white;
+  color: #0D8758;
+  padding: 4px 18px;
+}
+
+body div.header div.title div.navBtn .backHome a:hover {
+  background-color: #0D8758;
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */
