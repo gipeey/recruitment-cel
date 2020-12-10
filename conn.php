@@ -3,10 +3,10 @@
 	$servername = 'localhost';
 	$username = 'root';
 	$password = '';
-	$dbname = 'recruitment-cel';
+	$dbname = 'recruitment';
 
 
-	$conn = new mysqli('localhost', 'root', '', 'recruitment-cel');
+	$conn = new mysqli('localhost', 'root', '', 'recruitment');
 
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);

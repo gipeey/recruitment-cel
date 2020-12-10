@@ -1,0 +1,87 @@
+// Variables
+$primaryColor: #0D8758;
+$secondaryColor: #72DAA5;
+$tertiaryColor: #8EF7C1;
+$textColor: #404040;
+$borderColor: #DFDFDF;
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+
+body {
+
+    h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 50px;
+        text-align: center;
+        line-height: 2em;
+    }
+
+    div.container {
+
+        div.row {
+            div.nav-tab {
+                padding: 0;
+                margin: 0;
+
+                a.list-group-item {
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: 600;
+                    font-size: 15px;
+                    padding: 8px;
+                    margin: 0;
+                    background-color: transparent;
+                    color: $textColor;
+                    
+                }
+                a.active {
+                    background-color: $primaryColor;
+                    color: white;
+                    border: $primaryColor solid 1px;
+                }
+                
+            }
+
+            div.tab-content {
+                border: $borderColor solid 1px;
+                border-radius: 5px;
+                padding: 15px;
+                    
+                
+                form {
+                    label {
+                        padding-top: 9px;
+                    }
+                }
+                }
+            
+        }
+    }
+}
+
+// list job style
+
+div.list-job {
+    table {
+        thead {
+            th {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 600;
+                justify-content: center;
+                vertical-align: middle;
+            }
+        }
+
+        tbody {
+            tr {
+                td.text-center {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+

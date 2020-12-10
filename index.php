@@ -11,118 +11,93 @@
 
     <title>CHANDRA EKAJAYA LOGISTIK : RECRUITMENT</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+
+    
   </head>
   <body>
 
-  <!-- heading section -->
-
-  <div class="container-sm title">
+  <div class="container px-0 header">
+    <div class="title">
       <h2>Chandra Ekajaya Logistik</h2>
-      <h1>Recruitment</h1>
-      <a href="#" class="btn btn-primary">Back to Homepage</a>
+      <h1>Open Recruitment</h1>
+      <div class="navBtn">
+        <div class="browseJob">
+          <a href="#" class="btn btn-primary">Browse Job</a>
+        </div>
+        <div class="backHome">
+          <a href="#" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+      </div>
+      </div>
   </div>
 
-  <!-- form section -->
+<!-- filter -->
+  <div class="container content">
+    <form action="">
 
-  <div class="container-sm form-section">
+    <div class="row form-group filter">
+      <div class="col-sm">
+        <input type="text" name="filterName" placeholder="Job Name..." class="form-control">
+        </select>
+      </div>
 
-    <div class="formTitle">
-      <h1>FILL JOB APPLICATION BELOW</h1>
+      <div class="col-sm">
+        <select name="filterLocation" id="filterLocation" class="form-control">
+          <option value="all location">All Location</option>
+          <option value="office1">Office 1</option>
+          <option value="office2">Office 2</option>
+        </select>
+      </div>
+
+      <div class="col-sm">
+        <select name="filterExp" id="filterExp" class="form-control">
+          <option value="experience">Experience</option>
+          <option value="Fresh Graduate">Fresh Graduate</option>
+          <option value="Experienced">Experienced</option>
+        </select>
+      </div>
+
+      <div class="col-sm">
+        <select name="filterNature" id="filterNature" class="form-control">
+          <option value="all nature">Job Type</option>
+          <option value="full-time">Full-time</option>
+          <option value="part-time">Part-time</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Search</button>
     </div>
 
-    <form action="add_action.php" method="post" enctype="multipart/form-data">
-
-      <div class="form-row">
-
-        <div class="form-group col-sm-6">
-          <label for="celName">Full Name</label>
-          <input type="text" name="celName" id="celName" class="form-control" placeholder="input your name here...">
-        </div>
-
-        <div class="form-group col-sm-6">
-          <label for="celPosition">Choose your position</label>
-          <select name="celPosition" id="celPosition" class="form-control">
-            <option value="Null">- Choose position -</option>
-            <option value="Manager">Manager</option>
-            <option value="Admin">Admin</option>
-            <option value="CTO">CTO</option>
-            <option value="Designer">Designer</option>
-          </select>
-        </div>
-
-      </div>
-
-      <div class="form-row">
-
-        <div class="form-group col-sm-6">
-          <label for="celEmail">Email</label>
-          <input type="email" name="celEmail" id="celEmail" class="form-control" placeholder="example@mail.com">
-        </div>
-
-        <div class="form-group col-sm-6">
-          <label for="celPhone">Phone Number</label>
-          <input type="text" name="celPhone" id="celPhone" class="form-control" placeholder="62812345678">
-        </div>
-
-      </div>
-
-      <div class="form-group">
-        <label for="celAddress">Address</label>
-        <textarea name="celAddress" id="celAddress" class="form-control" cols="12" rows="3"></textarea>
-      </div>
-
-      <div class="form-row">
-
-        <div class="form-group col-sm-6">
-          <label for="celCv">Upload your CV</label>
-          <input type="file" name="celCv" id="celCv" class="form-control-file">
-        </div>
-
-        <div class="form-group col-sm-6">
-          <label for="celGender">Gender</label>
-          <div class="form-inline">
-
-            <div class="form-check">
-              <input type="radio" name="celGender" id="male" class="form-check-input" value="male">
-              <label class="form-check-label mr-3 gender" for="male">Male</label>
-            </div>
-
-            <div class="form-check">
-              <input type="radio" name="celGender" id="female" class="form-check-input" value="female">
-              <label for="female" class="form-check-label gender">Female</label>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="celPitch">Make your Pitch! (recommended)</label>
-        <textarea name="celPitch" id="celPitch" class="form-control" cols="12" rows="3"></textarea>
-        <small id="celPitchHelp" class="form-text text-muted">max 300 characters</small>
-      </div>
-
-      <button type="submit" class="btn btn-primary btnSubmit">Submit!</button>
     </form>
   </div>
 
+  <!-- result -->
+  <div class="container result">
 
+    <?php /*include 'conn.php';
+        $query = mysqli_query($conn,"SELECT * FROM joblist ORDER BY id ASC");?>
+    <?php if(mysqli_num_rows($query)>0){ ?>
+        <?php
+            $no = 1;
+            while($data = mysqli_fetch_array($query)){ */
+        ?>
+        <div class="row">
+          <div class="col-sm col-sm-2">
+              <img src="img/logo.png" alt="jobimage" class="col-sm">
+          </div class="col-sm">
+              <a class="col-sm-8" href="#"><h3>title</h3></a>
+              <span>location</span>
+              <span>experience</span>
+        </div>
+  </div>
 
-
-
-
-
-
+  
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    -->
+
   </body>
 </html>

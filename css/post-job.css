@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+body h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  text-align: center;
+  line-height: 2em;
+}
+
+body div.container div.row div.nav-tab {
+  padding: 0;
+  margin: 0;
+}
+
+body div.container div.row div.nav-tab a.list-group-item {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px;
+  margin: 0;
+  background-color: transparent;
+  color: #404040;
+}
+
+body div.container div.row div.nav-tab a.active {
+  background-color: #0D8758;
+  color: white;
+  border: #0D8758 solid 1px;
+}
+
+body div.container div.row div.tab-content {
+  border: #DFDFDF solid 1px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+body div.container div.row div.tab-content form label {
+  padding-top: 9px;
+}
+
+div.list-job table thead th {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+}
+
+div.list-job table tbody tr td.text-center {
+  vertical-align: middle;
+}
+/*# sourceMappingURL=post-job.css.map */
