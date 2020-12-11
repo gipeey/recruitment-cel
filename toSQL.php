@@ -39,7 +39,7 @@
            echo "Error: " . $sql . "<br>" . $conn->error;
          }
 
-         body('location: post-job.php');
+         header('location: post-job.php');
          
          $conn->close();
          ?>

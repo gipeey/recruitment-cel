@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 
+    <script src="https://kit.fontawesome.com/cd00a379b0.js" crossorigin="anonymous"></script>
+
     <title>CHANDRA EKAJAYA LOGISTIK : RECRUITMENT</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 
@@ -72,23 +74,39 @@
   </div>
 
   <!-- result -->
-  <div class="container result">
+  <div class="container joblist">
 
-    <?php /*include 'conn.php';
+  <?php include 'conn.php';
         $query = mysqli_query($conn,"SELECT * FROM joblist ORDER BY id ASC");?>
-    <?php if(mysqli_num_rows($query)>0){ ?>
-        <?php
-            $no = 1;
-            while($data = mysqli_fetch_array($query)){ */
-        ?>
+  <?php if(mysqli_num_rows($query)>0){ ?>
+  <?php
+      $no = 1;
+      while($data = mysqli_fetch_array($query)){
+  ?>
         <div class="row">
           <div class="col-sm col-sm-2">
-              <img src="img/logo.png" alt="jobimage" class="col-sm">
-          </div class="col-sm">
-              <a class="col-sm-8" href="#"><h3>title</h3></a>
-              <span>location</span>
-              <span>experience</span>
+              <img src="<?php echo $data["jobImg"];?>" alt="jobimage" class="col-sm">
+          </div>
+
+          <div class="col-sm col-sm-7">
+              <a href="#" class="title"> <h3><?php echo $data["jobName"];?></h3> </a>
+              <div class="desc text-muted">
+                <span class="location"><i class="fas fa-map-marker-alt mr-2"></i><?php echo $data["jobLocation"];?></span>
+                <span><i class="fas fa-business-time mr-2"></i><?php echo $data["jobExp"];?></span>
+                <span><i class="fas fa-hand-holding-usd mr-2"></i>Rp <?php echo $data["jobSalary"]; ?></span>
+              </div>
+          </div>
+
+          <div class="col-sm col-sm-3 text-center">
+            <a href="#" class="btn btn-primary">Apply Now</a>
+            <div class="date text-muted">
+              <span><i class="far fa-clock mr-2"></i>Published On: <?php echo $data["jobDate"];?></span>
+            </div>
+          </div>
+        
         </div>
+  <?php $no++; } ?>
+      <?php } ?>
   </div>
 
   
