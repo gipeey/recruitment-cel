@@ -39,6 +39,9 @@ $textColor: #404040;
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 
+html {
+    scroll-behavior: smooth;
+}
 // header section
 body {
 
@@ -128,14 +131,16 @@ div.content {
 
             div {
 
-                a.title h3 {
-                    font-size: 32px;
-                    color: $primaryColor;
-                    
+                a.title {
+                    text-decoration: none;
                     &:hover {
                         text-decoration: none;
                     }
-                    
+                
+                    h3 {
+                        font-size: 32px;
+                        color: $primaryColor;
+                    }
                 }
 
                 a.btn-primary {

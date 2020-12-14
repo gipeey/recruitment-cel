@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+nav.navbar {
+  background-color: white;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+nav.navbar div.navbar-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav.navbar div.navbar-item span.backbtn a {
+  color: #646464;
+  font-weight: 500;
+}
+
+nav.navbar div.navbar-item span.company {
+  border-left: #646464 solid 2px;
+}
+
+nav.navbar div.navbar-item span.company a {
+  font-size: 24px;
+  color: #4d4d4d;
+  font-weight: 600;
+  line-height: 1.6em;
+  margin-left: 10px;
+}
+
+div.jobtitle {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  font-family: 'Raleway', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.jobtitle img {
+  width: 256px;
+}
+
+div.jobtitle div.title {
+  margin-left: 15px;
+}
+
+div.jobtitle div.title h1 {
+  padding: 0px 20px;
+  border-radius: 25px;
+  font-size: 80px;
+  font-weight: bold;
+  color: #0D8758;
+}
+
+label {
+  font-weight: bold;
+}
+
+label.text-normal {
+  font-weight: normal;
+}
+
+div.content-header {
+  margin: 80px 142px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+div.content-header div.left-side {
+  padding: 20px 35px 20px 35px;
+  -webkit-box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+}
+
+div.content-header div.left-side div.jobdesc {
+  color: #0D8758;
+  margin-bottom: 30px;
+}
+
+div.content-header div.left-side form {
+  margin-top: 50px;
+  border-top: rgba(177, 177, 177, 0.7) solid 2px;
+  padding-top: 30px;
+}
+
+div.content-header div.left-side form input.formJob {
+  display: none;
+}
+
+div.content-header div.left-side form h2 {
+  color: #0D8758;
+}
+
+div.content-header div.left-side form button.btn-primary {
+  background-color: #0D8758;
+  border: none;
+}
+
+div.content-header div.left-side form button.btn-primary:hover {
+  background-color: #09583a;
+}
+
+div.content-header div.right-side {
+  padding-left: 30px;
+}
+
+div.content-header div.right-side div.box {
+  -webkit-box-shadow: 0 4px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 25px;
+}
+
+div.content-header div.right-side div.box div.jobsum {
+  text-align: center;
+  color: #0D8758;
+}
+
+div.content-header div.right-side div.box div.sumcont {
+  padding-left: 15px;
+  margin-top: 30px;
+}
+
+div.content-header div.right-side div.box div.sumcont dl dt {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+div.content-header div.right-side div.box div.sumcont dl dd {
+  font-weight: 600;
+}
+/*# sourceMappingURL=single-job.css.map */

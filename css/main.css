@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body div.header {
   background-image: url(../img/bg@2x.png);
   background-size: 430px;
@@ -109,13 +113,17 @@ div.container.joblist div.row {
   margin-bottom: 40px;
 }
 
+div.container.joblist div.row div a.title {
+  text-decoration: none;
+}
+
+div.container.joblist div.row div a.title:hover {
+  text-decoration: none;
+}
+
 div.container.joblist div.row div a.title h3 {
   font-size: 32px;
   color: #0D8758;
-}
-
-div.container.joblist div.row div a.title h3:hover {
-  text-decoration: none;
 }
 
 div.container.joblist div.row div a.btn-primary {

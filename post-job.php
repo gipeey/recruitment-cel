@@ -18,7 +18,7 @@
 </head>
 <body>
     <!-- title -->
-    <h1 class="title">Create a Job List</h1>
+    <h1 class="title" id="header">Create a Job List</h1>
 
     <!-- content -->
 
@@ -30,6 +30,7 @@
                 <div class="list-group" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action active" id="list-inputJob-list" data-toggle="list" href="#list-inputJob" role="tab" aria-controls="inputJob">Input form</a>
                 <a class="list-group-item list-group-item-action" id="list-job-list" data-toggle="list" href="#list-job" role="tab" aria-controls="job">List Job</a>
+                <a class="list-group-item list-group-item-action" id="list-job-list" data-toggle="list" href="#list-jobapplicantdata" role="tab" aria-controls="job">Job Applicant Data</a>
                 </div>
             </div>
 
@@ -117,7 +118,7 @@
                     <div class="tab-pane fade list-job" id="list-job" role="tabpanel" aria-labelledby="list-job-list">
 
                     <?php include 'conn.php';
-                    $query = mysqli_query($conn,"SELECT * FROM joblist ORDER BY id ASC");?>
+                    $query = mysqli_query($conn,"SELECT * FROM joblist ORDER BY id DESC");?>
                         <form action="">
 
                         <table class="table">
@@ -143,10 +144,10 @@
                                         <td><?php echo $data["jobName"];?></td>
                                         <td><?php echo $data["jobLocation"]; ?> </td>
                                         <td><?php echo $data["jobSalary"]; ?></td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-primary">Update</a>
-                                            <a href="#" class="btn btn-danger">Delete</a> 
-                                        </td>
+                                        <td class="text-center"><?php
+                                        echo "<a href='edit-job.php?id=".$data['id']."'>Edit</a>";
+                                        echo "<a href='delete-job.php?id=".$data['id']."'>Delete</a>";
+                                        ?></td>
                                     </tr>
                                     <?php $no++; } ?>
                                     <?php } ?>
@@ -156,6 +157,53 @@
 
                         </form>
                     </div>
+
+                    <div class="tab-pane fade list-applicant" id="list-jobapplicantdata" role="tabpanel" aria-labelledby="list-job-list">
+                    
+<?php extract($_POST);
+$conn=mysqli_connect('localhost', 'root', '', 'recruitment'); ?>
+
+<?php //show result
+$sql = "SELECT * FROM form_apply ORDER BY formJob DESC";?>
+
+                        <table class="table">
+                            <thead>
+                                <tr class="row text-center">
+                                    <th scope="col" class="col-1 tabNo">No</th>
+                                    <th scope="col" class="col-1 tabJob">Job</th>
+                                    <th scope="col" class="col-3 tabName">Applicant Name</th>
+                                    <th scope="col" class="col-3 tabEmail">Email</th>
+                                    <th scope="col" class="col-2 tabPhone">Phone Number</th>
+                                    <th scope="col" class="col-1 tabCv">CV</th>
+                                    <th scope="col" class="col-1 tabCv">Action</th>
+                                </tr>
+                            </thead>
+<?php $result = $conn->query($sql);
+$no = 1;
+if ($result->num_rows > 0) {
+while ( $row = $result->fetch_assoc()): ?>
+                            <tbody>
+                                <tr class="row">
+                                    <td scope="col" class="col-1 text-center tabNo"><?php echo $no; ?></td>
+                                    <td scope="col" class="col-1 tabJob"><?php echo $row["formJob"]; ?></td>
+                                    <td scope="col" class="col-3 tabName"><?php echo $row["formName"]; ?></td>
+                                    <td scope="col" class="col-3 tabEmail"><?php echo $row["formEmail"]; ?></td>
+                                    <td scope="col" class="col-2 tabPhone"><?php echo $row["formPhone"]; ?></td>
+                                    <td scope="col" class="col-1 text-center tabCv"><a href="<?php echo $row["formCv"]; ?>">CV</a></td>
+                                    <td scope="col" class="col-1 text-center tabCv"><a href="single-applicant.php?id=<?php echo $row["id"];?>">more</a></td>
+                                </tr>
+
+<?php $no++; endwhile; 
+    } else { 
+    echo "0 results";
+    } $conn->close();?>
+                            </tbody>
+                        </table>
+
+                        
+                    
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -179,6 +227,8 @@
                 });
             }); 
             </script>
+
+
     
 
 </body>

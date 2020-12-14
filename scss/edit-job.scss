@@ -1,0 +1,36 @@
+// Variables
+$primaryColor: #0D8758;
+$secondaryColor: #72DAA5;
+$tertiaryColor: #8EF7C1;
+$textColor: #404040;
+
+
+
+body {
+
+    div.container {
+        margin-top: 40px;
+
+        form {
+
+            input.id {
+                display: none;
+            }
+
+            div.col-10 {
+
+                img {
+                    height: 128px;
+                }
+
+            }
+
+            button.btn-primary {
+                background-color: $primaryColor;
+                border: none;
+                padding: 5px 15px;
+            }
+
+        }
+    }
+}

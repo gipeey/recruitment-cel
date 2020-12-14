@@ -1,0 +1,155 @@
+// Variables
+$primaryColor: #0D8758;
+$secondaryColor: #72DAA5;
+$tertiaryColor: #8EF7C1;
+$textColor: #404040;
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+
+
+
+// Navbar section
+
+nav.navbar {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    padding: 10px 0;
+
+    div.navbar-item {
+        display: flex;
+
+        span.backbtn {
+            a {
+                color: #646464;
+                font-weight: 500;
+            }
+        }
+
+        span.company {
+            border-left: #646464 solid 2px;
+
+            a {
+                font-size: 24px;
+                color: #4d4d4d;
+                font-weight: 600;
+                line-height: 1.6em;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+// header section
+
+    div.jobtitle {
+        margin-top: 35px;
+        margin-bottom: 35px;
+        font-family: 'Raleway', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+                width: 256px;
+        }
+
+        div.title{
+            margin-left: 15px;
+            
+            h1 {
+            padding: 0px 20px;
+            border-radius: 25px;
+            font-size: 80px;
+            font-weight: bold;
+            color: $primaryColor;
+            }
+        }
+    }
+
+// Content Section
+
+label {
+    font-weight: bold;
+}
+label.text-normal {
+    font-weight: normal;
+}
+
+div.content-header {
+    margin: 80px 142px;
+    font-family: 'Open Sans', sans-serif;
+    div.left-side {
+        padding: 20px 35px 20px 35px;
+        box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 25px;
+
+        div.jobdesc {
+            color: $primaryColor;
+            margin-bottom: 30px;
+            
+        }
+
+        form {
+            margin-top: 50px;
+            border-top: rgba(177, 177, 177, .7) solid 2px;
+            padding-top: 30px;
+
+            input.formJob {
+                display: none;
+            }
+
+            h2 {
+                color: $primaryColor;
+            }
+
+            button.btn-primary {
+                background-color: $primaryColor;
+                border: none;
+
+                &:hover {
+                    background-color: darken($color: $primaryColor, $amount: 10%);
+                }
+            }
+        }
+    }
+
+    div.right-side {
+        padding-left: 30px;
+        
+        div.box {
+            box-shadow: 0 4px 5px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 25px;
+       
+
+            div.jobsum {
+                text-align: center;
+                color: $primaryColor;
+
+            }
+
+            div.sumcont {
+                padding-left: 15px;
+                margin-top: 30px;
+
+                dl {
+
+                    dt {
+                        color: #6c757d;
+                        font-weight: 400;
+                        }
+
+                    dd {
+                        font-weight: 600;
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+}

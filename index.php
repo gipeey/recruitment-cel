@@ -1,3 +1,8 @@
+<!-- connect to mysqli -->
+
+<?php extract($_POST);
+      $conn=mysqli_connect('localhost', 'root', '', 'recruitment'); ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,10 +29,10 @@
       <h1>Open Recruitment</h1>
       <div class="navBtn">
         <div class="browseJob">
-          <a href="#" class="btn btn-primary">Browse Job</a>
+          <a href="#result" class="btn btn-primary">Browse Job</a>
         </div>
         <div class="backHome">
-          <a href="#" class="btn btn-secondary">Back to Homepage</a>
+          <a href="http://chandraekajaya.test" class="btn btn-secondary">Back to Homepage</a>
         </div>
       </div>
       </div>
@@ -74,39 +79,52 @@
   </div>
 
   <!-- result -->
-  <div class="container joblist">
+  <div class="container joblist" id="result">
 
-  <?php include 'conn.php';
+  <?php /*include 'conn.php';
         $query = mysqli_query($conn,"SELECT * FROM joblist ORDER BY id ASC");?>
   <?php if(mysqli_num_rows($query)>0){ ?>
   <?php
       $no = 1;
       while($data = mysqli_fetch_array($query)){
-  ?>
+  */?>
+
+<?php //show result
+$sql = "SELECT * FROM joblist ORDER BY id DESC";
+$result = $conn->query($sql);
+      $no = 1;
+      if ($result->num_rows > 0) {
+      while ( $row = $result->fetch_assoc()): ?>
+
+
         <div class="row">
           <div class="col-sm col-sm-2">
-              <img src="<?php echo $data["jobImg"];?>" alt="jobimage" class="col-sm">
+              <img src="<?php echo $row["jobImg"];?>" alt="jobimage" class="col-sm">
           </div>
 
           <div class="col-sm col-sm-7">
-              <a href="#" class="title"> <h3><?php echo $data["jobName"];?></h3> </a>
+              <a href="single-job.php?id=<?php echo $row['id']; ?>" class="title"> <h3><?php echo $row["jobName"];?></h3> </a>
               <div class="desc text-muted">
-                <span class="location"><i class="fas fa-map-marker-alt mr-2"></i><?php echo $data["jobLocation"];?></span>
-                <span><i class="fas fa-business-time mr-2"></i><?php echo $data["jobExp"];?></span>
-                <span><i class="fas fa-hand-holding-usd mr-2"></i>Rp <?php echo $data["jobSalary"]; ?></span>
+                <span class="location"><i class="fas fa-map-marker-alt mr-2"></i><?php echo $row["jobLocation"];?></span>
+                <span><i class="fas fa-business-time mr-2"></i><?php echo $row["jobExp"];?></span>
+                <span><i class="fas fa-hand-holding-usd mr-2"></i>Rp <?php echo $row["jobSalary"]; ?></span>
               </div>
           </div>
 
           <div class="col-sm col-sm-3 text-center">
-            <a href="#" class="btn btn-primary">Apply Now</a>
+            <a href="single-job.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Apply Now</a>
             <div class="date text-muted">
-              <span><i class="far fa-clock mr-2"></i>Published On: <?php echo $data["jobDate"];?></span>
+              <span><i class="far fa-clock mr-2"></i>Published On: <?php echo $row["jobDate"];?></span>
             </div>
           </div>
         
         </div>
-  <?php $no++; } ?>
-      <?php } ?>
+  <?php /* $no++; } ?>
+      <?php } */ ?>
+      <?php endwhile; 
+							} else { 
+								echo "0 results";
+							} $conn->close();?>
   </div>
 
   
