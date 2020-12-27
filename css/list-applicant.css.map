@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,uBAAuB;CAiBvC;;AAlBD,AAWoB,IAXhB,CAGA,KAAK,AAAA,MAAM,CAEP,KAAK,CAED,EAAE,CAEE,EAAE,CAEE,GAAG,AAAA,MAAM,CAAC;EACN,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "../scss/list-applicant.scss"
+    ],
+    "names": [],
+    "file": "list-applicant.css"
+}

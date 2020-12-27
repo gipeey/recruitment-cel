@@ -1,167 +1,174 @@
-<?php extract($_POST);
-        $conn = mysqli_connect('localhost', 'root', '', 'recruitment'); ?>
+<?php
+extract($_POST);
+$conn=mysqli_connect('localhost','root','','recruitment');
 
-<?php 
-$id     = $_GET['id'];
-$sql    = "SELECT * FROM joblist WHERE id = '$id'";
-$detail = mysqli_query($conn, $sql);
-$query  = mysqli_fetch_array($detail);
+$id   = $_GET['id'];
+$sql     = "SELECT * FROM joblist WHERE id = '$id'";
+$detail  = mysqli_query($conn, $sql);
+$query   = mysqli_fetch_array($detail);
 
-?>
-
-
+ ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/single-job.css">
 
 
-<!-- include font awesome css/js -->
+    <!-- include summernote css/js -->
     <script src="https://kit.fontawesome.com/cd00a379b0.js" crossorigin="anonymous"></script>
 
-
-    <title>Job Name</title>
+    <title><?php echo $query['jobName'];?></title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
-<body>  
 
-<!-- Nav -->
-<nav class="navbar sticky-top">
-    <div class="navbar-item">
-        <span class="nav-link backbtn">
-            <a href="http://recruitment-cel.test" class="nav-link"><i class="mr-3 fas fa-chevron-circle-left"></i>Back</a>
-        </span>
-
-        <span class="nav-brand company">
-            <a href="http://chandraekajaya.test" target="_blank" class="nav-link">Chandra Ekajaya Logistik</a>
-        </span>
-    </div>
-</nav>
+<body>
 
 
-<!-- header -->
-<div class="container" id="header">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light pt-3 pb-3 sticky-top">
+        <ul class="navbar-nav mr-3 mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="http://localhost/recruitment-cel/"><i class="fas fa-chevron-circle-left mr-2"></i> Back<span
+                        class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <a class="navbar-brand pl-3" href="http://chandraekajaya.test">Chandra Ekajaya Logistik</a>
+    </nav>
 
-    <div class="jobtitle">
-            <img src="<?php echo $query['jobImg']; ?>" alt="featuredimg" class="img-fluid">
-        <div class="title">
-            <h1><?php echo $query['jobName']; ?></h1>
-        </div>
-    </div>
-</div>
-
-
-<!-- content -->
-
-
-    <div class="row content-header">
-        <div class="col-8 left-side">
-            <div class="jobdesc">
-                <h2>JOB DESCRIPTION</h2>
+    <div class="container">
+        <header id="header">
+            <div class="jumbotron jumbotron-fluid">
+                <div>
+                    <img src="<?php echo $query['jobImg'];?>" alt="<?php echo $query['jobName'];?>">
+                    <h1 class="display-3"><?php echo $query['jobName'];?></h1>
+                </div>
             </div>
-            <div class="desccont">
-                <span><?php echo $query['jobDesc']; ?></span>
-            </div>
+        </header>
 
 
-            <!-- form apply -->
-            <form action="SQL.php" method="post" enctype="multipart/form-data">
-                <h2 class="mb-4">APPLY FOR A JOB</h2>
-                <input type="text" name="formJob" id="formJob" class="formJob" value="<?php echo $query['jobName']; ?>">
-                <div class="form-group row">
-                    <div class="col-6">
-                        <label for="formName">Full Name</label>
-                        <input type="text" name="formName" id="formName" class="form-control" placeholder="Full Name">
+        <!-- content -->
+
+        <div class="content">
+            <div class="row">
+                <div class="pl-0 col-sm-8 pr-4">
+                    <div class="left">
+                        <h3>Job Description</h3>
+                        <div class="isiContent"><?php echo $query['jobDesc'];?></div>
                     </div>
-                    <div class="col-6">
-                        <label for="formGender">Gender</label>
-                        <div class="form-inline">
-                            <div class="form-check mr-3">
-                                <input type="radio" name="formGender" id="male" value="male" class="form-check-input">
-                                <label for="male" class="form-check-label text-normal">Male</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" name="formGender" id="female" value="female" class="form-check-input">
-                                <label for="female" class="form-check-label text-normal">Female</label>
-                            </div>
+                </div>
+
+                <div class="col-sm-4 right">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Job Summary</h3>
+                        </div>
+                        <div class="col-5">
+                            <ul class="list-unstyled">
+                                <li>Published On</li>
+                                <li>Location</li>
+                                <li>Experience</li>
+                                <li>Job Nature</li>
+                                <li>Salary</li>
+                            </ul>
+                        </div>
+                        <div class="col-7">
+                            <ul class="list-unstyled">
+                                <li>: <?php echo $query['jobDate'];?></li>
+                                <li>: <?php echo $query['jobLocation'];?></li>
+                                <li>: <?php echo $query['jobExp'];?></li>
+                                <li>: <?php echo $query['jobNature'];?></li>
+                                <li>: <?php echo $query['jobSalary'];?></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- form -->
+            <div class="row">
+                <div class="col-8 pl-0 pr-4">
+                    <form action="input-apply.php" method="post" enctype="multipart/form-data">
 
-                <div class="form-group row">
-                    <div class="col-6">
-                        <label for="formEmail">Email</label>
-                        <input type="email" name="formEmail" id="formEmail" class="form-control" placeholder="example@gmail.com">
-                    </div>
-                    <div class="col-6">
-                        <label for="formPhone">Phone Number</label>
-                        <input type="text" name="formPhone" id="formPhone" class="form-control" placeholder="085745645645">
-                    </div>
-                </div>
+                        <h3 class="">Apply Form</h3>
+                        <input type="text" class="inputJob" name="inputJob" id="inputJob" value="<?php echo $query['jobName'];?>">
+                        <div class="form-row">
+                            <div class="col-sm-6 form-group">
+                                <label for="inputName">Full Name</label>
+                                <input type="text" name="inputName" id="inputName" class="form-control">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="inputGender">Gender</label> <br>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="inputGender" id="inputGender"
+                                            value="male">Male
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender"
+                                            value="Female"> Female
+                                    </label>
+                                </div>
+                            </div>
 
-                <div class="form-group row">
-                    <div class="col-12">
-                        <label for="formAddress">Address</label>
-                        <textarea name="formAddress" id="formAddress" cols="12" rows="3" class="form-control"></textarea>
-                    </div>
-                </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" name="inputEmail" id="inputEmail"
+                                    aria-describedby="inputEmail" placeholder="example@mail.com">
+                            </div>
 
-                <div class="form-group row">
-                    <div class="col-6">
-                        <label for="formCv">Upload Your CV</label>
-                        <input type="file" name="formCv" id="formCv" class="form-control-file">
-                    </div>
-                    <div class="col-6">
-                        <label for="formCv">Upload Photo</label>
-                        <input type="file" name="formPhoto" id="formPhoto" class="form-control-file">
-                    </div>
-                </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="inputNumber">Phone Number</label>
+                                <input type="text" class="form-control" name="inputNumber" id="inputNumber"
+                                    aria-describedby="inputPhoneNumber" placeholder="08XX-XXX-XXXX">
+                            </div>
 
-                <div class="form-group row">
-                    <div class="col-12">
-                        <label for="formPitch">Make Your Pitch!</label>
-                        <textarea name="formPitch" id="formPitch" cols="12" rows="3" maxlength="300" class="form-control"></textarea>
-                        <small id="formPitchHelp" class="form-text text-muted">max 300 characters</small>
-                    </div>
-                </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="inputAddress">Address</label>
+                                <textarea class="form-control" name="inputAddress" id="inputAddress"
+                                    rows="3"></textarea>
+                            </div>
 
-                <button type="submit" class="btn btn-primary">Apply</button>
-            </form>
-        </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="uploadCV">Upload CV</label>
+                                <input type="file" class="form-control-file" name="uploadCV" id="uploadCV"
+                                    placeholder="Upload Your CV" aria-describedby="uploadCV">
+                            </div>
 
-        <div class="col-4 right-side">
-            <div class="box">
-                <div class="jobsum">
-                    <h2>JOB SUMMARY</h2>
-                </div>
-                <div class="sumcont row">
-                    <dl class="row">
-                        <dt class="col-5">Published on</dt>
-                            <dd class="col-7">: <?php echo $query['jobDate']; ?></dd>
-                        
-                        <dt class="col-5">Location</dt>
-                            <dd class="col-7">: <?php echo $query['jobLocation']; ?></dd>
-                    
-                        <dt class="col-5">Job Nature</dt>
-                            <dd class="col-7">: <?php echo $query['jobNature']; ?></dd>
-                        <dt class="col-5">Salary</dt>
-                            <dd class="col-7">: Rp <?php echo $query['jobSalary']; ?></dd>
+                            <div class="col-sm-6 form-group">
+                                <label for="uploadPhoto">Upload Your Latest Photo</label>
+                                <input type="file" class="form-control-file" name="uploadPhoto" id="uploadPhoto"
+                                    placeholder="Upload Photo" aria-describedby="uploadPhoto" accept="image/*">
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <label for="inputPitch">Make Your Pitch! (recommended)</label>
+                                <textarea class="form-control" name="inputPitch" id="inputPitch" rows="3"
+                                    maxlength="300"></textarea>
+                                <small class="text-muted">max 300 characters</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Apply!</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    <br><br><br>
+
+
+
+
+
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-
-  </body>
-</html>
+    <script src="jQuery/jquery-3.5.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>

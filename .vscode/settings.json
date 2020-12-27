@@ -1,0 +1,11 @@
+{
+    "liveServer.settings.multiRootWorkspaceName": "recruitment-cel",
+    "liveSassCompile.settings.formats": [
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "./css"
+        }
+    ]
+}

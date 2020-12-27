@@ -1,18 +1,4 @@
-body div.container {
-  margin-top: 40px;
-}
-
-body div.container form input.id {
-  display: none;
-}
-
-body div.container form div.col-10 img {
+body div.header img {
   height: 128px;
-}
-
-body div.container form button.btn-primary {
-  background-color: #0D8758;
-  border: none;
-  padding: 5px 15px;
 }
 /*# sourceMappingURL=edit-job.css.map */
