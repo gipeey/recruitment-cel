@@ -2,7 +2,7 @@
     include 'conn.php';
 
         //include
-        $jobStatus          = $_POST['jobStatus'];
+        $id                 = $_POST['id'];
         $jobDate            = $_POST['jobDate'];
         $jobName            = $_POST['jobName'];
         $jobLocation        = $_POST['jobLocation'];
@@ -31,16 +31,18 @@
             }
          }
 
-         $sql = "INSERT INTO joblist (jobDate, jobName, jobLocation, jobExp, jobNature, jobDesc, jobSalary, jobImg)
-         VALUES ('$jobDate', '$jobName', '$jobLocation', '$jobExp', '$jobNature', '$jobDesc', '$jobSalary', '$jobImg')";
-         
-         if ($conn->query($sql) === TRUE) {
+         $sql = "UPDATE joblist SET jobDate='$jobDate', jobName='$jobName', jobLocation='$jobLocation', jobExp='$jobExp', jobNature='$jobNature', jobDesc='$jobDesc', jobSalary='$jobSalary', jobImg='$jobImg' WHERE id=$id";
+         $query = mysqli_query($conn, $sql);
+
+
+         if ($query) {
            echo "New record created successfully";
+           header('location: post-job.php#list-job');
          } else {
-           echo "Error: " . $sql . "<br>" . $conn->error;
+           echo "Error: " . $query . "<br>" . $conn->error;
          }
 
-         header('location: post-job.php');
+         
 
          $conn->close();
          ?>
