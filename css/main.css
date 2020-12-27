@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body div.header {
   background-image: url(../img/bg@2x.png);
   background-size: 430px;
@@ -77,6 +81,70 @@ body div.header div.title div.navBtn .backHome a:hover {
   color: white;
 }
 
+@media (max-width: 992px) {
+  body div.header {
+    background-image: url(../img/bgopacity.png);
+  }
+}
+
+@media (max-width: 576px) {
+  body div.header {
+    background-image: none;
+  }
+  body div.header div.title h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+  body div.header div.title h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+  body div.header div.title div.navBtn {
+    display: block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  body div.header div.title div.navBtn div.browseJob {
+    padding: 5px 0px;
+    width: 100%;
+  }
+  body div.header div.title div.navBtn div.browseJob a {
+    width: 100%;
+  }
+  body div.header div.title div.navBtn div.backHome {
+    padding: 5px 0;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+  body div.header div.title div.navBtn div.backHome a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  body div.header div.title h2 {
+    font-size: 20px;
+  }
+  body div.header div.title h1 {
+    font-size: 25px;
+  }
+  body div.header div.title div.navBtn .browseJob {
+    margin-bottom: 5px;
+  }
+  body div.header div.title div.navBtn .browseJob a {
+    font-size: 18px;
+  }
+  body div.header div.title div.navBtn .backHome {
+    margin-top: 5px;
+  }
+  body div.header div.title div.navBtn .backHome a {
+    font-size: 18px;
+  }
+}
+
 div.content {
   font-family: 'Open Sans', sans-serif;
 }
@@ -87,13 +155,19 @@ div.content div.filter {
   border-radius: 25px;
 }
 
-div.content div.filter button.btn-primary {
-  background-color: #11b676;
-  border: none;
-  padding-left: 40px;
-  padding-right: 40px;
-  font-weight: 600;
-  letter-spacing: 1px;
+div.content div.filter div.col-sm h3 {
+  font-weight: bold;
+  color: #404040;
+}
+
+div.content div.filter div.col-sm label {
+  font-size: 15px;
+}
+
+@media (max-width: 576px) {
+  div.content div.filter {
+    margin: 0 10px;
+  }
 }
 
 div.container.joblist {
@@ -107,15 +181,16 @@ div.container.joblist div.row {
   border-radius: 25px;
   padding: 20px 10px;
   margin-bottom: 40px;
+  min-height: 150px;
+}
+
+div.container.joblist div.row div a.title:hover {
+  text-decoration: none;
 }
 
 div.container.joblist div.row div a.title h3 {
   font-size: 32px;
   color: #0D8758;
-}
-
-div.container.joblist div.row div a.title h3:hover {
-  text-decoration: none;
 }
 
 div.container.joblist div.row div a.btn-primary {
@@ -129,6 +204,12 @@ div.container.joblist div.row div a.btn-primary {
   margin-top: 10px;
 }
 
+div.container.joblist div.row div a.btn-primary:hover {
+  background-color: #09583a;
+  -webkit-box-shadow: 0px 5px 5px rgba(77, 77, 77, 0.3);
+          box-shadow: 0px 5px 5px rgba(77, 77, 77, 0.3);
+}
+
 div.container.joblist div.row div div {
   font-size: 15px;
   position: absolute;
@@ -136,10 +217,46 @@ div.container.joblist div.row div div {
 }
 
 div.container.joblist div.row div div span {
-  margin-right: 80px;
+  margin-right: 25px;
 }
 
 div.container.joblist div.row div div.date {
   right: 0;
+}
+
+@media (max-width: 992px) {
+  div.container.joblist div.row {
+    min-height: 150px;
+  }
+  div.container.joblist div.row img {
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+  div.container.joblist div.row a.title h3 {
+    padding-bottom: 20px;
+  }
+  div.container.joblist div.row div.desc span {
+    display: block;
+  }
+  div.container.joblist div.row div.date {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  div.container.joblist div.row img {
+    display: none;
+    top: 30px;
+    height: 128px;
+  }
+  div.container.joblist div.row div.desc {
+    right: 0;
+  }
+  div.container.joblist div.row div.date {
+    position: relative;
+    margin-top: 10px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

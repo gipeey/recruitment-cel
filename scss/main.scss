@@ -39,6 +39,10 @@ $textColor: #404040;
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 
+html {
+    scroll-behavior: smooth;
+  }
+
 // header section
 body {
 
@@ -89,6 +93,80 @@ body {
                 }
             }
         }
+
+        @media (max-width: 992px,) {
+            background-image: url(../img/bgopacity.png);
+        }
+
+        @media (max-width: 576px) {
+            background-image: none;
+
+            div.title {
+                h2 {
+                    font-size: 25px;
+                    text-align: center;
+                }
+
+                h1 {
+                    font-size: 48px;
+                    text-align: center;
+                }
+
+                div.navBtn {
+                    display: block;
+                    align-items: center;
+                    text-align: center;
+
+                    div.browseJob {
+                        padding: 5px 0px;
+                        width: 100%;
+
+                        a {
+                            width: 100%;
+                        }
+                    }
+
+                    div.backHome {
+                        padding: 5px 0;
+                        width: 100%;
+                        margin-left: 0px;
+                        margin-top: 20px;
+
+                        a {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 350px) {
+            div.title {
+                h2 {
+                    font-size: 20px;
+                }
+                h1 {
+                    font-size: 25px;
+                }
+
+                div.navBtn {
+
+                    .browseJob{
+                        margin-bottom: 5px;
+                        a {
+                            font-size: 18px;
+                        }
+                    }
+
+                    .backHome{
+                        margin-top: 5px;
+                        a {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            } 
+        }
     }
 }
 
@@ -102,14 +180,19 @@ div.content {
         background-color: darken($color: #F1FBF6, $amount: 20%);
         border-radius: 25px;
         
-
-        button.btn-primary {
-            background-color: lighten($color: $primaryColor, $amount: 10%);
-            border: none;
-            padding-left: 40px;
-            padding-right: 40px;
-            font-weight: 600;
-            letter-spacing: 1px;
+        div.col-sm {
+            h3{
+                font-weight: bold;
+                color: $textColor;
+            }
+            
+            label {
+                font-size: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            margin: 0 10px;
         }
     }
 }
@@ -125,18 +208,20 @@ div.content {
             border-radius: 25px;
             padding: 20px 10px;
             margin-bottom: 40px;
+            min-height: 150px;
 
             div {
 
-                a.title h3 {
-                    font-size: 32px;
-                    color: $primaryColor;
-                    
-                    &:hover {
-                        text-decoration: none;
+                a.title {
+                        &:hover {
+                            text-decoration: none;
+                        }
+                
+                        h3 {
+                        font-size: 32px;
+                        color: $primaryColor;    
+                        }
                     }
-                    
-                }
 
                 a.btn-primary {
                     display: block;
@@ -146,7 +231,12 @@ div.content {
                     font-weight: 600;
                     padding-top: 8px;
                     padding-bottom: 8px;
-                    margin-top: 10px    ;
+                    margin-top: 10px;
+
+                    &:hover {
+                        background-color: darken($color: $primaryColor, $amount: 10%);
+                        box-shadow: 0px 5px 5px rgba($color: #4d4d4d, $alpha: 0.3);
+                    }
                     
                 }
 
@@ -156,13 +246,59 @@ div.content {
                     bottom: 0;
 
                     span {
-                        margin-right: 80px;
+                        margin-right: 25px;
                     }
                 }
 
                 div.date {
                     right: 0;
                 }
+            }
+
+            @media (max-width: 992px) {
+                min-height: 150px;
+
+                img {
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                }
+
+                a.title {
+
+                    h3 {
+                        padding-bottom: 20px;
+                    }
+                }
+                div.desc {
+                    
+                    span {
+                        display: block;
+                        
+                    }
+                }
+
+                div.date {
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+
+            @media (max-width: 576px) {
+                 img {
+                     display: none;
+                     top: 30px;
+                     height: 128px;
+                 }
+
+                 div.desc {
+                     right: 0;
+                 }
+
+                 div.date {
+                     position: relative;
+                     margin-top: 10px;
+                 }
             }
         }
     }

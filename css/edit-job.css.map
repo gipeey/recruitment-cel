@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAGQ,IAHJ,CAEA,GAAG,AAAA,OAAO,CACN,GAAG,CAAC;EACA,MAAM,EAAE,KAAK;CAEhB",
+    "sources": [
+        "../scss/edit-job.scss"
+    ],
+    "names": [],
+    "file": "edit-job.css"
+}

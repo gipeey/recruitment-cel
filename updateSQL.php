@@ -1,8 +1,10 @@
 <?php 
     include 'conn.php';
 
+        $id = $_POST['id'];
+
         //include
-        $jobStatus          = $_POST['jobStatus'];
+
         $jobDate            = $_POST['jobDate'];
         $jobName            = $_POST['jobName'];
         $jobLocation        = $_POST['jobLocation'];
@@ -31,8 +33,7 @@
             }
          }
 
-         $sql = "INSERT INTO joblist (jobDate, jobName, jobLocation, jobExp, jobNature, jobDesc, jobSalary, jobImg)
-         VALUES ('$jobDate', '$jobName', '$jobLocation', '$jobExp', '$jobNature', '$jobDesc', '$jobSalary', '$jobImg')";
+         $sql = "UPDATE joblist SET jobDate = '$jobDate', jobName = '$jobName', jobLocation = '$jobLocation', jobExp = '$jobExp', jobNature = '$jobNature', jobDesc = '$jobDesc', jobSalary = '$jobSalary', jobImg = '$jobImg' WHERE id = '$id'";
          
          if ($conn->query($sql) === TRUE) {
            echo "New record created successfully";
